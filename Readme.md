@@ -28,7 +28,7 @@ To run the Python code, you'll need to follow these steps:
      pip install pandas matplotlib seaborn
      ```
 
-3. Clone this repository
+3. Clone this repository: https://github.com/emilpk/ig-dividendtracker
 4. Prepare your data:
 
    - Export your dividend history as a CSV file from your [IG account](https://www.ig.com).
