@@ -12,50 +12,137 @@ You can generate bar charts to show your:
 
 ---
 
-## Steps
+## Prerequisites
 
-To run the Python code, you'll need to follow these steps:
+- Python 3.7 or higher
+- Git (to clone the repository)
 
-1. Set up your Python environment:
+---
 
-   - Install Python: If you don't have Python installed, download and install it from the official Python website (https://www.python.org/downloads/). Choose the latest version suitable for your operating system.
+## Setup Instructions
 
-2. Install required libraries:
+### 1. Clone the Repository
 
-   - Open a terminal or command prompt.
-   - Install the necessary libraries using pip (Python's package installer):
-     ```
-     pip install pandas matplotlib seaborn
-     ```
+```bash
+git clone https://github.com/emilpk/ig-dividendtracker
+cd ig-dividendtracker
+```
 
-3. Clone this repository: https://github.com/emilpk/ig-dividendtracker
-4. Prepare your data:
+### 2. Set Up Virtual Environment
 
-   - Export your dividend history as a CSV file from your [IG account](https://www.ig.com).
-   - ![](assets/20240930_112925_image.png)
-   - Rename the file to 'IG-DividendTransactionHistory.csv' and ensure it is in the **source** folder of this repository.
+Create and activate a virtual environment to keep dependencies isolated:
 
-5. To generate the monthly dividend bar chart:
-   In the terminal, navigate to the directory containing your scripts and run:
+**On macOS/Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-   ```
-   python monthlydividends.py
-   ```
+**On Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
 
-6. To generate the quarterly dividend bar chart:
-   In the terminal, navigate to the directory containing your scripts and run:
+### 3. Install Required Packages
 
-   ```
-   python quarterlydividends.py
-   ```
+Install all required dependencies from the requirements file:
 
-7. To generate the yearly dividend bar chart:
-   In the terminal, navigate to the directory containing your scripts and run:
+```bash
+pip install -r requirements.txt
+```
 
-   ```
-   python yearlydividends.py
-   ```
+### 4. Prepare Your Data
+
+1. Export your dividend history as a CSV file from your [IG account](https://www.ig.com)
+   ![](assets/20240930_112925_image.png)
+
+2. Rename the file to `IG-DividendTransactionHistory.csv` and place it in the **source** folder
+
+### 5. Clean Your Data (Important!)
+
+Before generating reports, clean your CSV file to remove any withdrawal transactions:
+
+```bash
+python3 clean_csv.py
+```
+
+This script will:
+- Remove rows where Transaction type is "WITH" (withdrawals)
+- Keep only dividend deposits for accurate reporting
+- Display how many rows were removed
+
+---
+
+## Generate Reports
+
+Once your data is cleaned, you can generate the dividend reports:
+
+### Monthly Dividend Report
+```bash
+python3 monthlydividends.py
+```
+
+### Quarterly Dividend Report
+```bash
+python3 quarterlydividends.py
+```
+
+### Yearly Dividend Report
+```bash
+python3 yearlydividends.py
+```
+
+All generated charts can be saved using the save icon <img src="assets/save.png" width="16" height="16" style="vertical-align: middle;"> and placed in the **reports** folder.
+
+---
+
+## File Structure
+
+```
+ig-dividendtracker/
+├── source/                          # Place your CSV file here
+│   └── IG-DividendTransactionHistory.csv
+├── reports/                         # Generated charts appear here
+├── assets/                          # Documentation images
+├── venv/                           # Virtual environment (created after setup)
+├── clean_csv.py                    # Data cleaning script
+├── monthlydividends.py             # Monthly report generator
+├── quarterlydividends.py           # Quarterly report generator
+├── yearlydividends.py              # Yearly report generator
+├── requirements.txt                # Python dependencies
+└── Readme.md                       # This file
+```
+
+---
+
+## Troubleshooting
+
+### Virtual Environment Issues
+- Make sure you've activated the virtual environment before running scripts
+- If you see "command not found" errors, check that Python is properly installed
+
+### Data Issues
+- Always run `clean_csv.py` after updating your CSV file
+- Ensure your CSV file is named exactly `IG-DividendTransactionHistory.csv`
+- Check that the CSV file is in the `source/` folder
+
+### Package Installation Issues
+- If pip install fails, try upgrading pip: `pip install --upgrade pip`
+- On some systems, you might need to use `python` instead of `python3`
+
+---
+
+## Deactivating Virtual Environment
+
+When you're done working with the project, deactivate the virtual environment:
+
+```bash
+deactivate
+```
+
+---
 
 That's it! 🎉️
 
-If you encounter any issues or need more detailed instructions for your specific setup, please let me know, and I'll be happy to help further.
+If you encounter any issues or need more detailed instructions for your specific setup, please open an issue on GitHub.
