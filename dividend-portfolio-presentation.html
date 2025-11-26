@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dividend Portfolio Analysis 2018-2025</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+
+        .presentation {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide h1 {
+            color: #4a5568;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        .slide h2 {
+            color: #2d3748;
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .slide h3 {
+            color: #4a5568;
+            font-size: 1.4em;
+            margin: 20px 0 10px 0;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .timeline-item {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            margin: 10px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            color: #4a5568;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .holdings-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .holding-category {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #48bb78;
+        }
+
+        .holding-category h4 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .holding-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .holding-category li {
+            padding: 5px 0;
+            color: #4a5568;
+        }
+
+        .highlight {
+            background: #fed7d7;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #f56565;
+            margin: 20px 0;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .nav-button:hover {
+            background: #5a67d8;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide" id="slide-1">
+            <div class="slide-number">1/6</div>
+            <h1>Dividend Portfolio Analysis</h1>
+            <div style="text-align: center; margin: 40px 0;">
+                <div class="stat-number" style="font-size: 3em;">2018 - 2025</div>
+                <div class="stat-label" style="font-size: 1.5em;">7+ Years of Dividend Investing</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">411</span>
+                    <div class="stat-label">Total Transactions</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">AUD</span>
+                    <div class="stat-label">Base Currency</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Global</span>
+                    <div class="stat-label">Diversification</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Investment Journey Timeline -->
+        <div class="slide" id="slide-2">
+            <div class="slide-number">2/6</div>
+            <h2>Investment Journey Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2018-2019</div>
+                    <div>Started with Australian blue chips</div>
+                    <ul style="margin-top: 10px; color: #4a5568;">
+                        <li>• BHP Billiton</li>
+                        <li>• NAB</li>
+                        <li>• Telstra</li>
+                        <li>• Wesfarmers</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020-2022</div>
+                    <div>International expansion</div>
+                    <ul style="margin-top: 10px; color: #4a5568;">
+                        <li>• US Tech stocks</li>
+                        <li>• Healthcare</li>
+                        <li>• ETF diversification</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023-2025</div>
+                    <div>Income optimization</div>
+                    <ul style="margin-top: 10px; color: #4a5568;">
+                        <li>• Monthly REITs</li>
+                        <li>• Covered call ETFs</li>
+                        <li>• Position scaling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Portfolio Evolution -->
+        <div class="slide" id="slide-3">
+            <div class="slide-number">3/6</div>
+            <h2>Portfolio Evolution & Growth</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">4x</span>
+                    <div class="stat-label">NAB Position Growth<br><small>60 → 285 shares</small></div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3x</span>
+                    <div class="stat-label">BHP Dividend Growth<br><small>A$35 → A$160</small></div>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <h3>Strategic Shifts Over Time</h3>
+                <ul style="color: #4a5568; font-size: 1.1em;">
+                    <li><strong>Income Focus:</strong> Added monthly dividend payers (Realty Income Corp)</li>
+                    <li><strong>International Diversification:</strong> US tech and healthcare exposure</li>
+                    <li><strong>Yield Enhancement:</strong> Covered call ETFs for additional income</li>
+                    <li><strong>REIT Exposure:</strong> Multiple real estate investment trusts</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4: Current Top Holdings -->
+        <div class="slide" id="slide-4">
+            <div class="slide-number">4/6</div>
+            <h2>Top Dividend Contributors</h2>
+            <div class="holdings-list">
+                <div class="holding-category">
+                    <h4>🏆 Largest Contributors</h4>
+                    <ul>
+                        <li><strong>Realty Income Corp</strong> - A$200-220/month</li>
+                        <li><strong>Fortescue Ltd</strong> - A$400-650/quarter</li>
+                        <li><strong>NAB</strong> - A$240+/quarter</li>
+                        <li><strong>Global X Covered Call ETF</strong> - A$100-280/month</li>
+                    </ul>
+                </div>
+                <div class="holding-category">
+                    <h4>🌏 Geographic Mix</h4>
+                    <ul>
+                        <li><strong>Australian:</strong> NAB, BHP, Fortescue, Telstra</li>
+                        <li><strong>US Stocks:</strong> Apple, Microsoft, AbbVie</li>
+                        <li><strong>ETFs:</strong> Vanguard, Global X</li>
+                        <li><strong>REITs:</strong> Multiple property trusts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Income Frequency -->
+        <div class="slide" id="slide-5">
+            <div class="slide-number">5/6</div>
+            <h2>Dividend Frequency Strategy</h2>
+            <div class="holdings-list">
+                <div class="holding-category" style="border-left-color: #48bb78;">
+                    <h4>📅 Monthly Income</h4>
+                    <ul>
+                        <li>Realty Income Corp</li>
+                        <li>Global X Covered Call ETF</li>
+                        <li>Consistent cash flow</li>
+                    </ul>
+                </div>
+                <div class="holding-category" style="border-left-color: #ed8936;">
+                    <h4>📊 Quarterly Income</h4>
+                    <ul>
+                        <li>Australian banks (NAB)</li>
+                        <li>Mining companies (BHP, Fortescue)</li>
+                        <li>US tech stocks</li>
+                    </ul>
+                </div>
+                <div class="holding-category" style="border-left-color: #9f7aea;">
+                    <h4>📈 Semi-Annual</h4>
+                    <ul>
+                        <li>Traditional Australian companies</li>
+                        <li>Some ETF distributions</li>
+                        <li>Tax return benefits</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Key Insights -->
+        <div class="slide" id="slide-6">
+            <div class="slide-number">6/6</div>
+            <h2>Key Investment Insights</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">✅</span>
+                    <div class="stat-label">Consistent Discipline<br><small>7+ years of regular investing</small></div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">🌍</span>
+                    <div class="stat-label">Smart Diversification<br><small>Domestic → Global expansion</small></div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">💰</span>
+                    <div class="stat-label">Income Optimization<br><small>Monthly + Quarterly flow</small></div>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <h3>🎯 Portfolio Strengths</h3>
+                <ul style="color: #4a5568; font-size: 1.1em; line-height: 1.6;">
+                    <li><strong>Long-term commitment:</strong> Consistent investing through market cycles</li>
+                    <li><strong>Strategic evolution:</strong> Adapted from domestic to global diversification</li>
+                    <li><strong>Income reliability:</strong> Multiple dividend frequencies for steady cash flow</li>
+                    <li><strong>Quality focus:</strong> Blue-chip companies and established dividend payers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-button" onclick="previousSlide()">← Previous</button>
+        <button class="nav-button" onclick="nextSlide()">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 6;
+
+        function showSlide(n) {
+            // Hide all slides
+            for (let i = 1; i <= totalSlides; i++) {
+                document.getElementById(`slide-${i}`).style.display = 'none';
+            }
+
+            // Show current slide
+            document.getElementById(`slide-${n}`).style.display = 'flex';
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowRight' || event.key === ' ') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+
+        // Initialize - show first slide
+        showSlide(1);
+    </script>
+</body>
+
+</html>
